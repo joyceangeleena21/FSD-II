@@ -1,7 +1,6 @@
-"use strict";
-const TAX_RATE = 0.08;
-const DELIVERY_CHARGE = 50;
-class Order {
+// Importing specific members
+import { TAX_RATE, DELIVERY_CHARGE } from './constants.js';
+export class Order {
     customer;
     foodPrice;
     orderId;
@@ -17,17 +16,8 @@ class Order {
     printBill() {
         console.log("----- Food Order Bill -----");
         console.log(`Customer: ${this.customer.name} (${this.customer.age})`);
-        console.log(`Food Type: ${this.customer.foodType}`);
         console.log(`Order ID: ${this.orderId}`);
-        console.log(`Food Price: ₹${this.foodPrice}`);
         console.log(`Total Bill: ₹${this.calculateTotalBill()}`);
         console.log("---------------------------");
     }
 }
-const user = {
-    name: "Rahul Sharma",
-    age: 25,
-    foodType: "Veg"
-};
-const myOrder = new Order(user, 500, 101);
-myOrder.printBill();
